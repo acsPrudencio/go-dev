@@ -34,7 +34,7 @@
                                     <constraint firstAttribute="width" constant="300" id="eVW-di-ruQ"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="emailAddress" textContentType="email"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Senha" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BBr-hq-EeC">
                                 <rect key="frame" x="181.5" y="530" width="51" height="21"/>
@@ -48,15 +48,18 @@
                                     <constraint firstAttribute="width" constant="300" id="zOp-Is-fsB"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" textContentType="password"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" highlighted="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RNc-Gp-531">
                                 <rect key="frame" x="144.5" y="655" width="125" height="34.5"/>
-                                <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                                <color key="backgroundColor" systemColor="systemGray2Color"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="paperplane" catalog="system" title="Autenticar" titleAlignment="center">
                                     <fontDescription key="titleFontDescription" type="system" pointSize="17"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="autenticar:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fSt-Is-ejR"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -77,6 +80,11 @@
                             <constraint firstItem="RNc-Gp-531" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="y05-x4-qWc"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="autenticarButton" destination="RNc-Gp-531" id="p6Q-w8-5Bd"/>
+                        <outlet property="emailTextField" destination="1zG-NA-O6x" id="HT0-Sz-RM6"/>
+                        <outlet property="senhaTextField" destination="pbo-cl-8If" id="gVY-3A-wO6"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -89,8 +97,8 @@
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
-        <systemColor name="systemOrangeColor">
-            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <systemColor name="systemGray2Color">
+            <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
