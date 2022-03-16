@@ -26,7 +26,7 @@ class ViewController: UIViewController {
                 
                 
         if isAutenticado(email: email, senha: senha){
-            let alert = UIAlertController(title: "Bem-vindo", message: "Doug", preferredStyle: .alert)
+            let alert = UIAlertController(title: "Bem-vindo", message: "Antonio", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "Confirmar", style: .default, handler: { Action in
                 print("Autenticado com sucesso!")
             }))
