@@ -1,8 +1,8 @@
 //
 //  AppDelegate.swift
-//  Aula_05
+//  tabBarCustomView
 //
-//  Created by Idwall Go Dev 014 on 15/03/22.
+//  Created by Idwall Go Dev 014 on 16/03/22.
 //
 
 import UIKit
@@ -14,7 +14,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-       //sleep(1)
         return true
     }
 
