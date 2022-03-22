@@ -2,18 +2,91 @@
 //  ViewController.swift
 //  AppNetworking
 //
-//  Created by Idwall Go Dev 014 on 18/03/22.
+//  Created by Douglas Nunes on 18/03/22.
 //
 
 import UIKit
 
 class ViewController: UIViewController {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view.
-    }
+	@IBOutlet var tableview: UITableView!
+	
+	@IBOutlet var loading: UIActivityIndicatorView!
+	
+	lazy var users = [User]() {
+		didSet {
+			DispatchQueue.main.async {
+				self.tableview.reloadData()
+			}
+		}
+	}
+	
+	override func viewDidLoad() {
+		super.viewDidLoad()
+		delegates()
+		getUsers()
+		showLoading()
+	}
+	
+	private func delegates() {
+		tableview.dataSource = self
+		tableview.delegate = self
+		
+		tableview.isHidden = true
+	}
 
+	private func getUsers() {
+		
+		Service.shared.getUsers { result in
+			
+			switch result {
+			case .success(let res):
+				self.users = res
+				DispatchQueue.main.async {
+					self.tableview.isHidden = false
+				}
+			case .failure(let error):
+				print(error)
+			}
+			
+			self.hideLoading()
+		}
+	}
+	
+	private func showLoading() {
+		loading.startAnimating()
+		loading.isHidden = false
+	}
+	
+	private func hideLoading() {
+		DispatchQueue.main.async {
+			self.loading.stopAnimating()
+			self.loading.isHidden = true
+		}
+	}
 
 }
 
+extension ViewController: UITableViewDelegate {
+	
+}
+
+extension ViewController: UITableViewDataSource {
+	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+		return users.count
+	}
+	
+	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+		
+		let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+		
+		let user = users[indexPath.row]
+		
+		cell.textLabel?.text = user.name
+		cell.detailTextLabel?.text = user.company.name
+		
+		return cell
+	}
+	
+	
+}
