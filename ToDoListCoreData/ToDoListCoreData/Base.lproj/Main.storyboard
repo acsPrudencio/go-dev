@@ -15,14 +15,70 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="f20-KW-svL">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="f20-KW-svL" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="ImT-va-N7R"/>
+                            <constraint firstItem="f20-KW-svL" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Qhk-OY-177"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="f20-KW-svL" secondAttribute="bottom" id="cCo-3I-XUN"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="f20-KW-svL" secondAttribute="trailing" id="yc6-9o-IGE"/>
+                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="jcH-pl-9Xa"/>
+                    <navigationItem key="navigationItem" id="jcH-pl-9Xa">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="fZs-pw-Jlj">
+                            <connections>
+                                <action selector="secondView:" destination="BYZ-38-t0r" id="hXV-TV-7IL"/>
+                                <segue destination="7fM-Eh-ESj" kind="show" identifier="AddVeiwController" id="rzy-af-2j7"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="f20-KW-svL" id="89Y-ji-zHz"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="939.13043478260875" y="65.625"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="g1z-F4-wGw">
+            <objects>
+                <viewController id="7fM-Eh-ESj" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="W18-sY-0VD">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="x9a-Vn-U3Y">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <textField key="tableFooterView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="teste" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" id="GZz-ai-LFG">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="34"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                </textField>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="BmE-Ng-8hp"/>
+                        <color key="backgroundColor" red="0.96862745289999996" green="0.96862745289999996" blue="0.96862745289999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="x9a-Vn-U3Y" firstAttribute="leading" secondItem="BmE-Ng-8hp" secondAttribute="leading" id="go5-kZ-Ofj"/>
+                            <constraint firstItem="x9a-Vn-U3Y" firstAttribute="top" secondItem="BmE-Ng-8hp" secondAttribute="top" id="ne9-Ov-hew"/>
+                            <constraint firstItem="BmE-Ng-8hp" firstAttribute="bottom" secondItem="x9a-Vn-U3Y" secondAttribute="bottom" id="oaA-qS-tua"/>
+                            <constraint firstItem="BmE-Ng-8hp" firstAttribute="trailing" secondItem="x9a-Vn-U3Y" secondAttribute="trailing" id="sOW-3T-PDa"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="jCz-Dv-fzy"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FdX-G1-6MS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1779.7101449275365" y="65.625"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="gWz-N2-LeU">

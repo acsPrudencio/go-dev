@@ -11,13 +11,17 @@ class ViewController: UIViewController {
 
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
+    @IBOutlet weak var tableView: UITableView!
+    
+    
+    
   //  @IBOutlet var tableView: UITableView!
     
-    let tableView: UITableView = {
-        let table = UITableView()
-        table.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
-        return table
-    }()
+//    let tableView: UITableView = {
+//        let table = UITableView()
+//        table.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
+//        return table
+//    }()
     
     var tarefas = [ToDoListItem]()
     
@@ -26,17 +30,37 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
         
         title = "ToDo List"
-        view.addSubview(tableView)
+       // view.addSubview(tableView)
         delegates()
-        tableView.frame = view.bounds
+     //   tableView.frame = view.bounds
         
+    }
+    
+    @IBAction func secondView(_ sender: Any) {
+        
+        let sender = "Teste"
+        
+        performSegue(withIdentifier: "AddVeiwController", sender: sender)
+        
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "AddVeiwController" {
+            
+            if let AddVeiwController = segue.destination as? AddVeiwController {
+                print("AddVeiwController:")
+                
+                AddVeiwController.property = sender as? String
+                
+            }
+            
+        }
     }
     
     func getAllItems(){
         do{
             tarefas = try context.fetch(ToDoListItem.fetchRequest())
             DispatchQueue.main.async {
-                self.tableView.reloadData()
+             //   self.tableView.reloadData()
             }
 
             
