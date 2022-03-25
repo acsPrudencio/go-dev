@@ -88,8 +88,7 @@ class ViewController: UIViewController {
         safeArea = view.layoutMarginsGuide
         
         title = "Desafio Login viewCode"
-        view.backgroundColor = .white
-        
+        view.backgroundColor = UIColor(red: 0.9686, green: 0.9686, blue: 0.9686, alpha: 1)
         view.addSubview(bannerImageView)
         view.addSubview(loginLabel)
         view.addSubview(inputEmailLabel)
