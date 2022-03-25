@@ -11,6 +11,8 @@ class ViewController: UIViewController {
     
     var safeArea: UILayoutGuide!
     
+    
+    
     lazy var loginLabel: UILabel = {
         let label = UILabel()
         label.textColor = .black
@@ -25,9 +27,13 @@ class ViewController: UIViewController {
     lazy var inputEmailLabel: UITextField = {
         let inputText = UITextField()
         inputText.textColor = .black
-        inputText.placeholder = "E-mail"
+        inputText.placeholder = "Insira seu e-mail"
         inputText.textAlignment = .center
+        inputText.layer.borderWidth = 1
+        inputText.layer.borderColor = UIColor.systemGray5.cgColor
         inputText.translatesAutoresizingMaskIntoConstraints = false
+        inputText.font = UIFont.systemFont(ofSize: 25)
+        inputText.layer.cornerRadius = 5
         return inputText
     }()
     
@@ -44,10 +50,14 @@ class ViewController: UIViewController {
     
     lazy var inputSenhaLabel: UITextField = {
         let inputText = UITextField()
+        inputText.layer.borderWidth = 1
+        inputText.layer.borderColor = UIColor.systemGray5.cgColor
         inputText.textColor = .black
-        inputText.placeholder = "Senha"
+        inputText.placeholder = "Insira sua senha"
         inputText.textAlignment = .center
         inputText.translatesAutoresizingMaskIntoConstraints = false
+        inputText.font = UIFont.systemFont(ofSize: 25)
+        inputText.layer.cornerRadius = 5
         return inputText
     }()
     
@@ -75,7 +85,6 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         safeArea = view.layoutMarginsGuide
         
         title = "Desafio Login viewCode"
@@ -111,7 +120,7 @@ class ViewController: UIViewController {
         inputSenhaLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16).isActive = true
         
         
-        buttonLabel.topAnchor.constraint(equalTo: inputSenhaLabel.bottomAnchor, constant: 10).isActive = true
+        buttonLabel.topAnchor.constraint(equalTo: inputSenhaLabel.bottomAnchor, constant: 50).isActive = true
         buttonLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16).isActive = true
         buttonLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16).isActive = true
         
