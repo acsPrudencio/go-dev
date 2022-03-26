@@ -70,10 +70,10 @@ class CustomTableViewCell: UITableViewCell {
     
     lazy var contentTopStack: UIStackView = {
         let stack = UIStackView()
+        stack.distribution = .equalSpacing
         stack.axis = .horizontal
         stack.alignment = .center
         stack.contentMode = .center
-        stack.spacing = 80
         stack.translatesAutoresizingMaskIntoConstraints = false
         return stack
     }()
@@ -117,6 +117,14 @@ class CustomTableViewCell: UITableViewCell {
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    func setup(user: User){
+        imageViewProfile.loadImage(from: user.picture)
+        titleLabel.text = user.name
+        descriptionLabel.text = user.lastChat
+        dataLabel.text = user.latest_timestamp
+        
     }
 
 
