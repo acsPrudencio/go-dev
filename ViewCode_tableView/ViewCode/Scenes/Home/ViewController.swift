@@ -31,12 +31,25 @@ class ViewController: UIViewController {
 		   navigationController?.navigationBar.standardAppearance = appearance
 		   navigationController?.navigationBar.compactAppearance = appearance
 		   navigationController?.navigationBar.scrollEdgeAppearance = appearance
+        
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+        let addButton = UIBarButtonItem(image: UIImage.init(systemName: "dpad.down.filled"), style: .plain, target: self, action: #selector(callSecondView))
+        
+        navigationItem.rightBarButtonItems = [addButton]
    }
+    
+    @objc func callSecondView(){
+        let secondViewController = SecondViewController()
+        
+        secondViewController.idProduct = "Teste"
+        
+        navigationController?.present(secondViewController, animated: true)
+    }
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
 
-		title = "View Controller"
+		title = "Home"
 		
 		view.backgroundColor = .white
 		
@@ -60,6 +73,19 @@ class ViewController: UIViewController {
 }
 
 extension ViewController: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let thirdViewController = ThirdViewController()
+        
+        if let _ = navigationController {
+            navigationController?.pushViewController(thirdViewController, animated: true)
+
+        }else{
+            present(thirdViewController, animated: true)
+        }
+        // chama a proxima tela
+    }
 	
 }
 
