@@ -20,7 +20,7 @@ class SecondViewController: UIViewController {
     }()
     override func viewDidLoad() {
         title = "Second ViewController"
-        self.view.backgroundColor = .orange
+        self.view.backgroundColor = .white
         super.viewDidLoad()
         self.view.addSubview(self.closeButton)
         configConstraints()
@@ -28,10 +28,8 @@ class SecondViewController: UIViewController {
     }
     
     @objc func closeModal(){
-//        print("Sucesso")
-//        dismiss(animated: true)
         dismiss(animated: true, completion: {
-            print("Sucesso dismiss")
+//            print("Sucesso dismiss")
             
         })
     }

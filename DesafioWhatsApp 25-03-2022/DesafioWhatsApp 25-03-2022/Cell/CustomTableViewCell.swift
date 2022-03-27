@@ -13,7 +13,7 @@ class CustomTableViewCell: UITableViewCell {
     
     lazy var imageViewProfile: UIImageView = {
         let imageView = UIImageView()
-        imageView.image = UIImage(named: "gohan2")
+        imageView.image = UIImage(named: "person")
         imageView.layer.cornerRadius = frame.size.height/2
         imageView.clipsToBounds = true
         imageView.translatesAutoresizingMaskIntoConstraints = false
@@ -25,7 +25,7 @@ class CustomTableViewCell: UITableViewCell {
         let label = UILabel()
         label.textColor = .black
         label.font = UIFont.systemFont(ofSize: 16)
-        label.text = "Antonio Carlos"
+        label.text = "Lorem ipsum"
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -33,7 +33,7 @@ class CustomTableViewCell: UITableViewCell {
     lazy var descriptionLabel: UILabel = {
         let label = UILabel()
         label.textColor = .lightGray
-        label.text = "Simply dummy text of the printing and typesetting industry."
+        label.text = "Lorem ipsum"
         label.numberOfLines = 2
         label.font = UIFont.systemFont(ofSize: 13)
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -43,7 +43,7 @@ class CustomTableViewCell: UITableViewCell {
     lazy var dataLabel: UILabel = {
         let labeld = UILabel()
         labeld.textColor = .lightGray
-        labeld.text = "25/03/2022"
+        labeld.text = "00/00/0000"
         labeld.numberOfLines = 0
         labeld.font = UIFont.systemFont(ofSize: 16)
         labeld.translatesAutoresizingMaskIntoConstraints = false
@@ -106,7 +106,7 @@ class CustomTableViewCell: UITableViewCell {
         addSubview(plusLabel)
         NSLayoutConstraint.activate([
             plusLabel.topAnchor.constraint(equalTo: topAnchor, constant: 30),
-            plusLabel.leadingAnchor.constraint(equalTo: contentStack.trailingAnchor, constant: -14)
+            plusLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -8)
         ])
         
         contentStack.addArrangedSubview(contentTopStack)
